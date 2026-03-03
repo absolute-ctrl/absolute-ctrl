@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="160" fill="none">
+  <style>
+    text { font-family: ui-monospace, Menlo, monospace; }
+    .label { fill: #C9D1D9; font-size: 12px; }
+    .dim { fill: #484F58; font-size: 11px; }
+  </style>
+
+  <!-- Grid of tool boxes -->
+  <!-- Row 1 -->
+  <rect x="0" y="0" width="108" height="44" rx="6" fill="#161B22" stroke="#30363D" stroke-width="1"/>
+  <text x="54" y="18" text-anchor="middle" class="label">GCC</text>
+  <text x="54" y="33" text-anchor="middle" class="dim">compiler</text>
+
+  <rect x="124" y="0" width="108" height="44" rx="6" fill="#161B22" stroke="#30363D" stroke-width="1"/>
+  <text x="178" y="18" text-anchor="middle" class="label">LLVM</text>
+  <text x="178" y="33" text-anchor="middle" class="dim">backend</text>
+
+  <rect x="248" y="0" width="108" height="44" rx="6" fill="#161B22" stroke="#30363D" stroke-width="1"/>
+  <text x="302" y="18" text-anchor="middle" class="label">NASM</text>
+  <text x="302" y="33" text-anchor="middle" class="dim">assembler</text>
+
+  <rect x="372" y="0" width="108" height="44" rx="6" fill="#161B22" stroke="#30363D" stroke-width="1"/>
+  <text x="426" y="18" text-anchor="middle" class="label">Git</text>
+  <text x="426" y="33" text-anchor="middle" class="dim">version ctrl</text>
+
+  <!-- Row 2 -->
+  <rect x="0" y="58" width="108" height="44" rx="6" fill="#161B22" stroke="#30363D" stroke-width="1"/>
+  <text x="54" y="76" text-anchor="middle" class="label">JDK</text>
+  <text x="54" y="91" text-anchor="middle" class="dim">java</text>
+
+  <rect x="124" y="58" width="108" height="44" rx="6" fill="#161B22" stroke="#30363D" stroke-width="1"/>
+  <text x="178" y="76" text-anchor="middle" class="label">ghcup</text>
+  <text x="178" y="91" text-anchor="middle" class="dim">haskell</text>
+
+  <rect x="248" y="58" width="108" height="44" rx="6" fill="#161B22" stroke="#30363D" stroke-width="1"/>
+  <text x="302" y="76" text-anchor="middle" class="label">GDB</text>
+  <text x="302" y="91" text-anchor="middle" class="dim">debugger</text>
+
+  <rect x="372" y="58" width="108" height="44" rx="6" fill="#161B22" stroke="#30363D" stroke-width="1"/>
+  <text x="426" y="76" text-anchor="middle" class="label">Make</text>
+  <text x="426" y="91" text-anchor="middle" class="dim">build</text>
+
+  <!-- Row 3: platform -->
+  <rect x="0" y="120" width="232" height="36" rx="6" fill="#0D1117" stroke="#30363D" stroke-width="1" stroke-dasharray="4 3"/>
+  <text x="116" y="143" text-anchor="middle" class="dim">Linux (WSL2) on Windows</text>
+
+  <rect x="248" y="120" width="232" height="36" rx="6" fill="#0D1117" stroke="#30363D" stroke-width="1" stroke-dasharray="4 3"/>
+  <text x="364" y="143" text-anchor="middle" class="dim">terminal-first workflow</text>
+</svg>
