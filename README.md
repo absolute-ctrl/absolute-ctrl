@@ -6,7 +6,7 @@ Systems programmer. CS student. Building things from the ground up.
 
 ### What I work with
 
-<img src="lang-bar.svg" alt="Language proficiency: C 80%, Java 12%, Zig 5%, Rust and Haskell 3%" width="600"/>
+<img src="Lang.svg" alt="Language proficiency: C 80%, Java 12%, Zig 5%, Rust and Haskell 3%" width="600"/>
 
 ```
 Toolchain:  GCC · LLVM · NASM · JDK · ghcup
