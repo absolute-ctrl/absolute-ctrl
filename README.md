@@ -8,7 +8,7 @@ Most of what I write runs close to the hardware. I think in memory layouts and d
 
 ### Languages
 
-<img src="bar.svg" alt="C 80%, Java 12%, Zig 5%, Rust and Haskell 3%" width="480"/>
+<img src="Lang.svg" alt="C 80%, Java 12%, Zig 5%, Rust and Haskell 3%" width="480"/>
 
 **C** is where I live. Pointers, manual memory, the standard library — this is how I learned what a computer actually does. I've built data structures from scratch, written interactive programs, and I'm comfortable enough that C feels like a first language rather than a tool I picked up.
 
