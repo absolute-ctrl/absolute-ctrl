@@ -1,27 +1,31 @@
 # Hey, I'm Eduardo.
 
-CS student. Building things from the ground up.
+Systems programmer. CS student. Building things from the ground up.
 
 ---
 
-### Currently working on
+### What I work with
 
-- **MERN Blog** — Full-stack blog built with MongoDB, Express, React, and Node.js
-- **Java Calculator** — Desktop calculator application in Java
-- **Zig Explorations** — Learning systems programming through Zig
-- **x86-64 Assembly** — Low-level programming with NASM and GNU linker
+<img src="lang-bar.svg" alt="Language proficiency: C 80%, Java 12%, Zig 5%, Rust and Haskell 3%" width="600"/>
 
-### Currently learning
-
-`Zig` · `Rust` · `Assembly (x86-64)` · `Japanese (日本語)`
-
-### Languages & tools
-
-```text
-Java · JavaScript · C · Zig · Rust · x86-64 ASM
-React · Node.js · Express · MongoDB · Git · WSL2
+```
+Toolchain:  GCC · LLVM · NASM · JDK · ghcup
+Platform:   Linux (WSL2)
+Editor:     whatever gets the job done
 ```
 
+### Currently focused on
+
+**Zig** — my next main language. Systems programming with sane defaults,
+no hidden control flow, and a C interop story that actually works.
+
+Also writing **x86-64 assembly** to understand what the machine is actually doing.
+
+### Other things
+
+Learning **Japanese** (日本語) through immersion.
+Interested in pure mathematics, rotary engines, and calisthenics.
+
 ---
 
-<sub>目標: Working in Japan's tech industry.</sub>
+<sub>目標: 日本のテック業界で働くこと。</sub>
