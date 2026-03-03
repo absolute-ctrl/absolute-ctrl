@@ -1,16 +1,17 @@
-## Hi there 👋
+Hey, I'm Eduardo.
+CS student. Building things from the ground up.
 
-<!--
-**absolute-ctrl/absolute-ctrl** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+Currently working on
 
-Here are some ideas to get you started:
+MERN Blog — Full-stack blog built with MongoDB, Express, React, and Node.js
+Java Calculator — Desktop calculator application in Java
+Zig Explorations — Learning systems programming through Zig
+x86-64 Assembly — Low-level programming with NASM and GNU linker
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+Currently learning
+Zig · Rust · Assembly (x86-64) · Japanese (日本語)
+Languages & tools
+textJava · JavaScript · C · Zig · Rust · x86-64 ASM
+React · Node.js · Express · MongoDB · Git · WSL2
+
+<sub>目標: Working in Japan's tech industry.</sub>
