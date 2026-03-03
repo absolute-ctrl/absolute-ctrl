@@ -20,11 +20,6 @@ Most of what I write runs close to the hardware. I think in memory layouts and d
 
 ### Toolchain
 
-```
-GCC · LLVM · NASM · JDK · ghcup
-Linux (WSL2) · Git
-```
-
 <img src="tools.svg" alt="Toolchain: GCC, LLVM, NASM, Git, JDK, ghcup, GDB, Make" width="480"/>
 
 LLVM shows up twice in my stack, it's the backend for both Rust and Zig. NASM is for when I want to see what the machine is really doing at the instruction level. x86-64, AT&T be damned.
