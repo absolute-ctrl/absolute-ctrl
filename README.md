@@ -2,9 +2,9 @@
 
 # Hey, I'm Eduardo.
 
-CS student. Systems programmer. I like understanding how things actually work -- not how someone else's abstraction tells me they work.
+CS student. Systems programmer. I like understanding how things actually work, not how abstraction tells me they work.
 
-Most of what I write runs close to the hardware. I think in memory layouts and data pipelines, not frameworks. If I can't explain what's happening underneath, I don't consider it understood.
+I prefer writing close to the hardware. I think in memory layouts and data pipelines, not frameworks. If I can't explain what's happening underneath, I don't consider it understood.
 
 ---
 
@@ -32,6 +32,6 @@ I'm also writing x86-64 assembly. Not because anyone needs hand-written assembly
 
 ### Beyond code
 
-I care about **pure mathematics** -- not the applied kind, the kind that describes why the universe is structured the way it is. Algebra, logic, the foundations. Programming is just one notation system for expressing those ideas.
+I'm interested in **pure mathematics**, not the applied kind, the kind that describes why the universe is structured the way it is. Algebra, logic, the foundations. Programming is just one notation system for expressing those ideas.
 
 <img src="footer.svg" width="100%" alt=""/>
