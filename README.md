@@ -6,11 +6,11 @@ I'm a CS student at Feevale University in southern Brazil. I started in Computer
 
 Right now I'm focused on two tracks:
 
-**Java** for enterprise backend — learning Spring Boot, writing clean and readable code that doesn't need comments to explain itself. I structure projects around well-named functions instead of heavy OOP abstractions.
+**Java** for enterprise backend - learning Spring Boot, writing clean and readable code that doesn't need comments to explain itself. I structure projects around well-named functions instead of heavy OOP abstractions.
 
-**Kotlin** for modern JVM development and Android — same ecosystem, less boilerplate, more expressive. Currently building Android apps with XML layouts and exploring everything the language offers on top of Java.
+**Kotlin** for modern JVM development and Android - same ecosystem, less boilerplate, more expressive. Currently building Android apps with XML layouts and exploring everything the language offers on top of Java.
 
-I also write **C** when I want to get closer to the machine — manual memory management, pointer arithmetic, and understanding what the compiler is actually doing with my code.
+I also write **C** when I want to get closer to the machine - manual memory management, pointer arithmetic, and understanding what the compiler is actually doing with my code.
 
 ---
 
