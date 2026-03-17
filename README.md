@@ -1,5 +1,3 @@
-<img src="header.svg" width="100%" alt=""/>
-
 # Eduardo Augusto Kirst
 
 **Java & Kotlin developer. Computer Science student. Building things that work.**
@@ -47,6 +45,3 @@ Tools           Android Studio · IntelliJ IDEA · Git · GCC · Linux (WSL2) ·
 ### Find me
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Eduardo%20Kirst-blue?style=flat&logo=linkedin)](https://www.linkedin.com/in/eduardo-kirst/)
-[![Email](https://img.shields.io/badge/Email-Eduardo__akirst%40protonmail.com-gray?style=flat&logo=protonmail)](mailto:Eduardo_akirst@protonmail.com)
-
-<img src="footer.svg" width="100%" alt=""/>
