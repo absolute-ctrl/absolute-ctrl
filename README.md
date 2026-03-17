@@ -1,37 +1,52 @@
 <img src="header.svg" width="100%" alt=""/>
 
-# Hey, I'm Eduardo.
+# Eduardo Augusto Kirst
 
-CS student. Systems programmer. I like understanding how things actually work, not how abstraction tells me they work.
+**Java & Kotlin developer. Computer Science student. Building things that work.**
 
-I prefer writing close to the hardware. I think in memory layouts and data pipelines, not frameworks. If I can't explain what's happening underneath, I don't consider it understood.
+I'm a CS student at Feevale University in southern Brazil. I started in Computer Engineering, found my way into programming through curiosity, and stayed because I like understanding how things actually work under the hood.
+
+Right now I'm focused on two tracks:
+
+**Java** for enterprise backend — learning Spring Boot, writing clean and readable code that doesn't need comments to explain itself. I structure projects around well-named functions instead of heavy OOP abstractions.
+
+**Kotlin** for modern JVM development and Android — same ecosystem, less boilerplate, more expressive. Currently building Android apps with XML layouts and exploring everything the language offers on top of Java.
+
+I also write **C** when I want to get closer to the machine — manual memory management, pointer arithmetic, and understanding what the compiler is actually doing with my code.
 
 ---
 
-### Languages
+### What I'm working on
 
-<img src="lang-bar.svg" width="100%" alt="C 80%, Java 12%, Zig 5%, Rust and Haskell 3%"/>
+| Project | Language | Status |
+|---------|----------|--------|
+| [Student Grade Manager](https://github.com/absolute-ctrl/Student-Grade-Manager-Kotlin) | Kotlin | ✅ Complete |
+| Calculator App (Android) | Kotlin + XML | 🔧 In progress |
+| REST API (Spring Boot) | Java | 📋 Planned |
+| [Binary Search Tree](https://github.com/absolute-ctrl/binary-tree-C) | C | ✅ Complete |
+| Riemann Integral Visualizer | Python | 🔧 In progress |
 
-**C** is where I live. Pointers, manual memory, the standard library. this is how I learned what a computer actually does. I've built data structures from scratch, written interactive programs, and I'm comfortable enough that C feels like a first language rather than a tool I picked up.
+---
 
-**Zig** is where I'm heading. It fixes what C gets wrong without hiding what C gets right. No hidden control flow, real C interop, comptime instead of macros. I'm still early with it, but the design philosophy clicks with how I think.
+### Languages and tools
 
-**Java** I know from university. It works. That's about as enthusiastic as I'll get.
+```
+Languages       Java · Kotlin · C · Python
+Frameworks      Android SDK · Spring Boot (learning)
+Tools           Android Studio · IntelliJ IDEA · Git · GCC · Linux (WSL2) · Vim
+```
 
-### Toolchain
+---
 
-<img src="tools.svg" alt="Toolchain: GCC, LLVM, NASM, Git, JDK, ghcup, GDB, Make" width="480"/>
+### Languages I speak
 
-LLVM shows up twice in my stack, it's the backend for both Rust and Zig. NASM is for when I want to see what the machine is really doing at the instruction level. x86-64, AT&T be damned.
+🇧🇷 Português (native) · 🇺🇸 English (advanced) · 🇯🇵 日本語 (actively studying)
 
-### What I'm building
+---
 
-Right now I'm focused on getting deeper with Zig while keeping C sharp. Most of my projects are small, intentional things, the kind where the goal isn't a finished product but understanding a concept well enough to implement it from nothing.
+### Find me
 
-I'm also writing x86-64 assembly. Not because anyone needs hand-written assembly in 2026, but because there shouldn't be a layer between me and the CPU that I don't understand.
-
-### Beyond code
-
-I'm interested in **pure mathematics**, not the applied kind, the kind that describes why the universe is structured the way it is. Algebra, logic, the foundations. Programming is just one notation system for expressing those ideas.
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Eduardo%20Kirst-blue?style=flat&logo=linkedin)](https://www.linkedin.com/in/eduardo-kirst/)
+[![Email](https://img.shields.io/badge/Email-Eduardo__akirst%40protonmail.com-gray?style=flat&logo=protonmail)](mailto:Eduardo_akirst@protonmail.com)
 
 <img src="footer.svg" width="100%" alt=""/>
