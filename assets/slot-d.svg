@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="300" viewBox="0 0 420 300" font-family="'IBM Plex Mono','Cascadia Mono',Consolas,'Courier New',monospace">
+<defs><pattern id="s" width="4" height="4" patternUnits="userSpaceOnUse"><rect width="4" height="2" fill="#000" opacity=".3"/></pattern>
+<clipPath id="scr"><rect x="22" y="44" width="376" height="150" rx="6"/></clipPath></defs>
+<path d="M10 0 H360 L410 40 V290 Q410 300 400 300 H20 Q10 300 10 290 Z" fill="#0A0F0A" stroke="#FFB000" stroke-width="3"/>
+<text x="24" y="30" fill="#FFB000" font-size="15" font-weight="700">SLOT D:</text>
+<text x="340" y="30" text-anchor="end" fill="#33FF66" font-size="12">[IN DEV]</text>
+<rect x="22" y="44" width="376" height="150" rx="6" fill="#050805" stroke="#1F7A3A"/>
+<g clip-path="url(#scr)"><g fill="none" stroke="#33FF66"><rect x="40" y="54" width="92" height="26" stroke="#33FF66"/><rect x="40" y="114" width="92" height="26" stroke="#33FF66"/><rect x="160" y="84" width="92" height="26" stroke="#FFB000"/><rect x="290" y="54" width="92" height="26" stroke="#33FF66"/><rect x="290" y="114" width="92" height="26" stroke="#33FF66"/></g><text x="86" y="72" text-anchor="middle" fill="#33FF66" font-size="12">input</text><text x="86" y="132" text-anchor="middle" fill="#33FF66" font-size="12">scene</text><text x="206" y="102" text-anchor="middle" fill="#33FF66" font-size="12">renderer</text><text x="336" y="72" text-anchor="middle" fill="#33FF66" font-size="12">OpenGL</text><text x="336" y="132" text-anchor="middle" fill="#33FF66" font-size="12">Vulkan</text><line x1="132" y1="67" x2="160" y2="97" stroke="#1F7A3A" stroke-width="1.5"/><line x1="132" y1="127" x2="160" y2="97" stroke="#1F7A3A" stroke-width="1.5"/><line x1="252" y1="97" x2="290" y2="67" stroke="#1F7A3A" stroke-width="1.5"/><line x1="252" y1="97" x2="290" y2="127" stroke="#1F7A3A" stroke-width="1.5"/><text x="40" y="184" fill="#1F7A3A" font-size="11">frame 000001  16.6ms</text></g>
+<text x="24" y="226" fill="#33FF66" font-size="15" font-weight="700">Generic Game Engine</text>
+<text x="24" y="252" fill="#FFB000" font-size="13">C / OpenGL / Vulkan / GLFW</text>
+<rect x="24" y="270" width="372" height="2" fill="#1F7A3A" opacity=".6"/>
+<rect width="420" height="300" fill="url(#s)" opacity=".7"/>
+</svg>

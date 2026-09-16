@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="64" viewBox="0 0 880 64" font-family="'IBM Plex Mono','Cascadia Mono',Consolas,'Courier New',monospace">
+<defs>
+<pattern id="scan" width="4" height="4" patternUnits="userSpaceOnUse"><rect width="4" height="2" fill="#000" opacity=".28"/></pattern>
+<radialGradient id="glow" cx="50%" cy="45%" r="75%"><stop offset="0" stop-color="#143a1c" stop-opacity=".55"/><stop offset="1" stop-color="#0A0F0A" stop-opacity="0"/></radialGradient>
+<filter id="ph"><feGaussianBlur stdDeviation=".6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs>
+<rect width="880" height="64" rx="14" fill="#0A0F0A"/>
+<rect width="880" height="64" rx="14" fill="url(#glow)"/>
+<g filter="url(#ph)"><text x="28" y="40" fill="#FFB000" font-size="15" font-weight="700">&gt; LOADED PROGRAMS</text><text x="852" y="40" text-anchor="end" fill="#1F7A3A" font-size="14">6 slots, 4 in use</text></g>
+<rect width="880" height="64" rx="14" fill="url(#scan)"/>
+<rect x="1.5" y="1.5" width="877" height="61" rx="13" fill="none" stroke="#1F7A3A" stroke-width="3"/>
+</svg>

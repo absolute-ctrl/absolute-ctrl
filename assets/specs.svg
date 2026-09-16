@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="200" viewBox="0 0 880 200" font-family="'IBM Plex Mono','Cascadia Mono',Consolas,'Courier New',monospace">
+<defs>
+<pattern id="scan" width="4" height="4" patternUnits="userSpaceOnUse"><rect width="4" height="2" fill="#000" opacity=".28"/></pattern>
+<radialGradient id="glow" cx="50%" cy="45%" r="75%"><stop offset="0" stop-color="#143a1c" stop-opacity=".55"/><stop offset="1" stop-color="#0A0F0A" stop-opacity="0"/></radialGradient>
+<filter id="ph"><feGaussianBlur stdDeviation=".6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs>
+<rect width="880" height="200" rx="14" fill="#0A0F0A"/>
+<rect width="880" height="200" rx="14" fill="url(#glow)"/>
+<g filter="url(#ph)"><text x="28" y="34" fill="#FFB000" font-size="15" font-weight="700">&gt; SYSTEM SPECS</text><line x1="28" y1="46" x2="852" y2="46" stroke="#1F7A3A" stroke-dasharray="4 4"/><text x="42" y="84" fill="#FFB000" font-size="14" font-weight="700">LANGUAGE</text><text x="224" y="84" fill="#FFB000" font-size="14" font-weight="700">GRAPHICS / PLATFORM</text><text x="534" y="84" fill="#FFB000" font-size="14" font-weight="700">TOOLCHAIN</text><rect x="28" y="62" width="824" height="110" fill="none" stroke="#1F7A3A"/><line x1="28" y1="96" x2="852" y2="96" stroke="#1F7A3A"/><line x1="210" y1="62" x2="210" y2="172" stroke="#1F7A3A"/><line x1="520" y1="62" x2="520" y2="172" stroke="#1F7A3A"/><text x="42" y="124" fill="#33FF66" font-size="16">C</text><text x="224" y="124" fill="#33FF66" font-size="16">OpenGL, Vulkan, GLFW</text><text x="534" y="124" fill="#33FF66" font-size="16">GCC (UCRT64)</text><text x="42" y="162" fill="#33FF66" font-size="16">COBOL</text><text x="224" y="162" fill="#33FF66" font-size="16">z/OS</text><text x="534" y="162" fill="#33FF66" font-size="16">z/OS UNIX compiler</text></g>
+<rect width="880" height="200" rx="14" fill="url(#scan)"/>
+<rect x="1.5" y="1.5" width="877" height="197" rx="13" fill="none" stroke="#1F7A3A" stroke-width="3"/>
+</svg>
