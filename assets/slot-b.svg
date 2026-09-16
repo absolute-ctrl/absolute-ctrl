@@ -10,4 +10,9 @@
 <text x="24" y="252" fill="#FFB000" font-size="13">COBOL / z/OS emulation</text>
 <rect x="24" y="270" width="372" height="2" fill="#1F7A3A" opacity=".6"/>
 <path d="M10 0 H360 L410 40 V290 Q410 300 400 300 H20 Q10 300 10 290 Z" fill="url(#s)" opacity=".7"/>
+<g><path d="M8 0 H362 L412 42 V292 Q412 300 400 300 H20 Q8 300 8 292 Z" fill="#0A0F0A"/><animate attributeName="opacity" from="1" to="0" begin="5.10s" dur="0.14s" fill="freeze"/></g>
+<rect x="0" y="149.0" width="420" height="2" fill="#33FF66" opacity="0">
+<animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.1;.6;1" begin="4.93s" dur="0.24s" fill="freeze"/>
+<animate attributeName="x" from="210.0" to="0" begin="4.93s" dur="0.14s" fill="freeze"/>
+<animate attributeName="width" from="0" to="420" begin="4.93s" dur="0.14s" fill="freeze"/></rect>
 </svg>

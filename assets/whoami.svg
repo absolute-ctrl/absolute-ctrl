@@ -9,4 +9,9 @@
 <g filter="url(#ph)"><text x="28" y="34" fill="#FFB000" font-size="15" font-weight="700">&gt; WHOAMI</text><line x1="28" y1="46" x2="852" y2="46" stroke="#1F7A3A" stroke-dasharray="4 4"/><text x="28" y="80" fill="#1F7A3A" font-size="15">C:\&gt; <tspan fill="#33FF66">whoami</tspan></text><text x="28" y="112" fill="#FFB000" font-size="16">Systems programmer. Graphics tinkerer.</text><text x="28" y="138" fill="#33FF66" font-size="16">I write C close to the metal and COBOL close to the mainframe.</text><text x="28" y="164" fill="#33FF66" font-size="16">I care about where every byte lives, how every pixel gets drawn,</text><text x="28" y="190" fill="#33FF66" font-size="16">and what the OS is doing behind my back.</text></g>
 <rect width="880" height="230" rx="14" fill="url(#scan)"/>
 <rect x="1.5" y="1.5" width="877" height="227" rx="13" fill="none" stroke="#1F7A3A" stroke-width="3"/>
+<g><rect width="880" height="230" rx="14" fill="#0A0F0A"/><animate attributeName="opacity" from="1" to="0" begin="2.00s" dur="0.49s" fill="freeze"/></g>
+<rect x="0" y="114.0" width="880" height="2" fill="#33FF66" opacity="0">
+<animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.1;.6;1" begin="1.40s" dur="0.82s" fill="freeze"/>
+<animate attributeName="x" from="440.0" to="0" begin="1.40s" dur="0.49s" fill="freeze"/>
+<animate attributeName="width" from="0" to="880" begin="1.40s" dur="0.49s" fill="freeze"/></rect>
 </svg>

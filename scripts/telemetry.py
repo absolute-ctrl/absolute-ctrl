@@ -9,6 +9,10 @@ OUT = os.path.join(os.path.dirname(__file__), "..", "assets", "telemetry.svg")
 BG, G, A, D = "#0A0F0A", "#33FF66", "#FFB000", "#1F7A3A"
 FONT = "'IBM Plex Mono','Cascadia Mono',Consolas,'Courier New',monospace"
 W, H = 880, 260
+# power-on timing: 12th panel in the page-wide sequence (slow first panel, each next one 22% faster)
+_t = 0.0
+for _i in range(11): _t += max(0.15, 1.4 * 0.78 ** _i)
+PS, PD = _t, max(0.15, 1.4 * 0.78 ** 11)
 
 QUERY = """query($login:String!){ user(login:$login){
   followers{totalCount}
@@ -65,7 +69,12 @@ def render(stats, langs):
 <rect width="{W}" height="{H}" rx="14" fill="{BG}"/><rect width="{W}" height="{H}" rx="14" fill="url(#glow)"/>
 {b}
 <rect width="{W}" height="{H}" rx="14" fill="url(#scan)"/>
-<rect x="1.5" y="1.5" width="{W-3}" height="{H-3}" rx="13" fill="none" stroke="{D}" stroke-width="3"/></svg>'''
+<rect x="1.5" y="1.5" width="{W-3}" height="{H-3}" rx="13" fill="none" stroke="{D}" stroke-width="3"/>
+<g><rect width="{W}" height="{H}" rx="14" fill="{BG}"/><animate attributeName="opacity" from="1" to="0" begin="{PS+PD*.55:.2f}s" dur="{PD*.45:.2f}s" fill="freeze"/></g>
+<rect x="0" y="{H/2-1}" width="{W}" height="2" fill="{G}" opacity="0">
+<animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.1;.6;1" begin="{PS:.2f}s" dur="{PD*.75:.2f}s" fill="freeze"/>
+<animate attributeName="x" from="{W/2}" to="0" begin="{PS:.2f}s" dur="{PD*.45:.2f}s" fill="freeze"/>
+<animate attributeName="width" from="0" to="{W}" begin="{PS:.2f}s" dur="{PD*.45:.2f}s" fill="freeze"/></rect></svg>'''
 
 if __name__ == "__main__":
     data = fetch() if TOKEN else (None, None)
