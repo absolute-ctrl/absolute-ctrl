@@ -9,5 +9,5 @@
 <text x="24" y="226" fill="#33FF66" font-size="15" font-weight="700">Generic Game Engine</text>
 <text x="24" y="252" fill="#FFB000" font-size="13">C / OpenGL / Vulkan / GLFW</text>
 <rect x="24" y="270" width="372" height="2" fill="#1F7A3A" opacity=".6"/>
-<rect width="420" height="300" fill="url(#s)" opacity=".7"/>
+<path d="M10 0 H360 L410 40 V290 Q410 300 400 300 H20 Q10 300 10 290 Z" fill="url(#s)" opacity=".7"/>
 </svg>
