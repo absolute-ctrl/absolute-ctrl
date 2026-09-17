@@ -27,13 +27,13 @@
   },
 
   "whoami": {
-    "title": "WHOAMI",
-    "command": "whoami",
+    "title": "whoami",
+    "command": "absolute",
     "lines": [
-      "Systems programmer. Graphics tinkerer.",
-      "I write C close to the metal and COBOL close to the mainframe.",
-      "I care about where every byte lives, how every pixel gets drawn,",
-      "and what the OS is doing behind my back."
+      "Systems mage. Graphics peasant :(.",
+      "I write C... sometimes with seg faults... and COBOL close on mainframes.",
+      "I truly like to mess with pointers at every opportunity, create some \"programmer art\",",
+      "and get to know the computer a little better, ragebait the OS is also on my wishlist."
     ]
   },
 
@@ -105,8 +105,8 @@
       "prs": "Pull requests",
       "followers": "Followers"
     },
-    "languages_title": "LANGUAGE MIX",
-    "languages_shown": 5
+    "languages_title": "MAGE'S SOUP",
+    "languages_shown": 6
   },
 
   "footer": { "lines": ["READY.", "PRESS ANY KEY TO CONTINUE"] }
