@@ -1,0 +1,113 @@
+{
+  "user": "absolute-ctrl",
+  "title": "absolute-ctrl: systems and graphics programmer. C with OpenGL, Vulkan and GLFW; COBOL on z/OS.",
+
+  "theme": "phosphor",
+  "palette_overrides": {},
+  "palettes": {
+    "phosphor": { "background": "#0A0F0A", "panel": "#070B07", "screen": "#050805", "primary": "#33FF66", "accent": "#FFB000", "dim": "#1F7A3A", "shade": "#0F3D1C", "glow": "#143A1C" },
+    "amber":    { "background": "#0F0B05", "panel": "#0B0804", "screen": "#070502", "primary": "#FFB000", "accent": "#FFE08A", "dim": "#8A5A00", "shade": "#3D2A05", "glow": "#3A2A0A" },
+    "ice":      { "background": "#050A10", "panel": "#04080D", "screen": "#02050A", "primary": "#5CE1FF", "accent": "#FF5CA8", "dim": "#1D5A70", "shade": "#0B2A38", "glow": "#0E2A3A" },
+    "paper":    { "background": "#101010", "panel": "#0B0B0B", "screen": "#060606", "primary": "#E8E8E8", "accent": "#FF4A3D", "dim": "#6B6B6B", "shade": "#2A2A2A", "glow": "#262626" }
+  },
+  "font": "'IBM Plex Mono','Cascadia Mono',Consolas,'Courier New',monospace",
+
+  "boot": {
+    "lines": [
+      ["ABSOLUTE-CTRL BIOS v2.0", "   (C) 2026  PHOSPHOR SYSTEMS"],
+      ["Memory test ................ ", "640K OK"],
+      ["Detecting graphics adapter . ", "OpenGL / Vulkan OK"],
+      ["Probing CPU features ....... ", "SIMD, caches, pointers OK"],
+      ["Mounting z/OS datasets ..... ", "READY"],
+      ["Loading C runtime .......... ", "GCC UCRT64 OK"]
+    ],
+    "prompt": "C:\\> boot profile.sys",
+    "name": ["ABSOLUTE", "-CTRL"],
+    "tagline": "systems + graphics programmer"
+  },
+
+  "whoami": {
+    "title": "WHOAMI",
+    "command": "whoami",
+    "lines": [
+      "Systems programmer. Graphics tinkerer.",
+      "I write C close to the metal and COBOL close to the mainframe.",
+      "I care about where every byte lives, how every pixel gets drawn,",
+      "and what the OS is doing behind my back."
+    ]
+  },
+
+  "specs": {
+    "title": "SYSTEM SPECS",
+    "columns": ["LANGUAGE", "GRAPHICS / PLATFORM", "TOOLCHAIN"],
+    "placeholder": "[ free slot ]",
+    "rows": [
+      ["C", "OpenGL, Vulkan, GLFW", "GCC (UCRT64)"],
+      ["COBOL", "z/OS", "z/OS UNIX compiler"],
+      ["", "", ""]
+    ]
+  },
+
+  "mission": {
+    "title": "CURRENT MISSION",
+    "items": [
+      { "label": "RENDERING",    "text": "Leveling up OpenGL, then Vulkan",        "level": 6 },
+      { "label": "OS INTERNALS", "text": "Windows, Linux, Raspberry Pi, z/OS",     "level": 4 },
+      { "label": "HARDWARE",     "text": "Low-level features, memory done right", "level": 3 }
+    ],
+    "note": "// loading bars show where the journey is, not a skill rating"
+  },
+
+  "statuses": {
+    "IN DEV":   { "color": "accent",  "in_use": true,  "blink": false },
+    "ONLINE":   { "color": "primary", "in_use": true,  "blink": true  },
+    "PAUSED":   { "color": "dim",     "in_use": true,  "blink": false },
+    "SHIPPED":  { "color": "primary", "in_use": true,  "blink": false },
+    "PLANNING": { "color": "dim",     "in_use": false, "blink": false }
+  },
+
+  "programs": {
+    "title": "LOADED PROGRAMS",
+    "slots": [
+      { "id": "A", "title": "3D Terrain Generation (Noise)",    "stack": "C / OpenGL / GLFW",          "status": "IN DEV",   "art": "terrain"  },
+      { "id": "B", "title": "z/OS COBOL Fast Data Processing",  "stack": "COBOL / z/OS emulation",     "status": "IN DEV",   "art": "terminal" },
+      { "id": "C", "title": "Portable Minecraft Clone, Pure C", "stack": "C / OpenGL / GLFW",          "status": "IN DEV",   "art": "voxels"   },
+      { "id": "D", "title": "Generic Game Engine",              "stack": "C / OpenGL / Vulkan / GLFW", "status": "IN DEV",   "art": "engine"   },
+      { "id": "E", "title": "Slot empty",                       "stack": "awaiting input...",          "status": "PLANNING", "art": "idle"     },
+      { "id": "F", "title": "Slot empty",                       "stack": "awaiting input...",          "status": "PLANNING", "art": "idle"     }
+    ]
+  },
+
+  "art": {
+    "terrain":  { "loop_seconds": 16, "rows": 22 },
+    "terminal": { "header": "SDSF OUTPUT  JOB00042  CUSTPROC", "columns": "SEQ   KEY        AMOUNT     RC", "step_seconds": 0.45 },
+    "voxels":   { "loop_seconds": 5 },
+    "engine": {
+      "loop_seconds": 12,
+      "nodes": ["input", "scene", "renderer", "OpenGL", "Vulkan"],
+      "command": "$ engine build --target vulkan",
+      "shaders": ["basic.vert", "basic.frag", "post.frag"],
+      "triangle_colors": ["#FF3B4E", "#3BFF6A", "#3B7BFF"]
+    },
+    "idle": { "label": "NO SIGNAL" }
+  },
+
+  "telemetry": {
+    "title": "TELEMETRY",
+    "stats_cache_seconds": 0,
+    "fields": ["accesses", "previous_access", "repos", "stars", "commits", "prs", "followers"],
+    "labels": {
+      "accesses": "Profile accesses",
+      "previous_access": "Previous visitor",
+      "repos": "Public repositories",
+      "stars": "Stars collected",
+      "commits": "Commits this year",
+      "prs": "Pull requests",
+      "followers": "Followers"
+    },
+    "languages_title": "LANGUAGE MIX",
+    "languages_shown": 5
+  },
+
+  "footer": { "lines": ["READY.", "PRESS ANY KEY TO CONTINUE"] }
+}
