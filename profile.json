@@ -2,7 +2,7 @@
   "user": "absolute-ctrl",
   "title": "absolute-ctrl: systems and graphics programmer. C with OpenGL, Vulkan and GLFW; COBOL on z/OS.",
 
-  "theme": "true-ice",
+  "theme": "phosphor",
   "palette_overrides": {},
   "palettes": {
     "phosphor":  { "background": "#0A0F0A", "panel": "#070B07", "screen": "#050805", "primary": "#33FF66", "accent": "#FFB000", "dim": "#1F7A3A", "shade": "#0F3D1C", "glow": "#143A1C" },
