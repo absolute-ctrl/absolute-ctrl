@@ -1,0 +1,550 @@
+{
+  "user": "absolute-ctrl",
+  "title": "absolute-ctrl: systems and graphics programmer. C with OpenGL, Vulkan and GLFW; COBOL on z/OS.",
+  "theme": "phosphor",
+  "palette_overrides": {},
+  "palettes": {
+    "phosphor": {
+      "background": "#0A0F0A",
+      "panel": "#070B07",
+      "screen": "#050805",
+      "primary": "#33FF66",
+      "accent": "#FFB000",
+      "dim": "#1F7A3A",
+      "shade": "#0F3D1C",
+      "glow": "#143A1C"
+    },
+    "amber": {
+      "background": "#0F0B05",
+      "panel": "#0B0804",
+      "screen": "#070502",
+      "primary": "#FFB000",
+      "accent": "#FFE08A",
+      "dim": "#8A5A00",
+      "shade": "#3D2A05",
+      "glow": "#3A2A0A"
+    },
+    "ice": {
+      "background": "#050A10",
+      "panel": "#04080D",
+      "screen": "#02050A",
+      "primary": "#5CE1FF",
+      "accent": "#FF5CA8",
+      "dim": "#1D5A70",
+      "shade": "#0B2A38",
+      "glow": "#0E2A3A"
+    },
+    "paper": {
+      "background": "#101010",
+      "panel": "#0B0B0B",
+      "screen": "#060606",
+      "primary": "#E8E8E8",
+      "accent": "#FF4A3D",
+      "dim": "#6B6B6B",
+      "shade": "#2A2A2A",
+      "glow": "#262626"
+    },
+    "cold": {
+      "background": "#060A14",
+      "panel": "#04070F",
+      "screen": "#020509",
+      "primary": "#8FC2FF",
+      "accent": "#35E0FF",
+      "dim": "#2E5288",
+      "shade": "#13294D",
+      "glow": "#0E2450"
+    },
+    "gruvbox": {
+      "background": "#282828",
+      "panel": "#32302F",
+      "screen": "#1D2021",
+      "primary": "#EBDBB2",
+      "accent": "#FE8019",
+      "dim": "#928374",
+      "shade": "#504945",
+      "glow": "#3C3836"
+    }
+  },
+  "font": "'IBM Plex Mono','Cascadia Mono',Consolas,'Courier New',monospace",
+  "layout": {
+    "width": 880,
+    "margin": 28,
+    "card_columns": 2,
+    "card_gap": 20,
+    "card_row_gap": 20,
+    "section_gap": 0,
+    "corner_radius": 16,
+    "border": true
+  },
+  "effects": {
+    "scanlines": true,
+    "scanline_opacity": 0.28,
+    "scanline_spacing": 4,
+    "glow": true,
+    "blur": 0.6,
+    "flicker": 0.0,
+    "dividers": true
+  },
+  "sizes": {
+    "header": 15,
+    "body": 15,
+    "small": 13,
+    "note": 13,
+    "tagline": 14,
+    "boot": 16,
+    "boot_name": 44,
+    "logo_name": 42,
+    "table": 16,
+    "table_header": 14,
+    "meter": 16,
+    "card_slot": 15,
+    "card_status": 12,
+    "card_title": 15,
+    "card_stack": 13,
+    "telemetry": 15,
+    "footer": 18
+  },
+  "animation": {
+    "enabled": true,
+    "speed": 1.2,
+    "start_delay": 0.25,
+    "line_seconds": 0.07,
+    "chunk_seconds": 0.16,
+    "section_seconds": 0.26,
+    "pause_seconds": 0.14,
+    "block_seconds": 0.045,
+    "bar_seconds": 0.8,
+    "card_seconds": 0.12,
+    "card_load_seconds": 0.28,
+    "typing": {
+      "enabled": true,
+      "chars_per_second": 26,
+      "cursor": true,
+      "blink_seconds": 1.0
+    },
+    "logo": {
+      "row_seconds": 0.022,
+      "bar_seconds": 0.9
+    }
+  },
+  "logo": {
+    "enabled": true,
+    "black_seconds": 1.0,
+    "warmup_seconds": 0.8,
+    "warm_hold_seconds": 2.2,
+    "hold_seconds": 5.0,
+    "blank_seconds": 1.8,
+    "black": "#000000",
+    "cursor_x": 40,
+    "cursor_y": 64,
+    "top_left": "PHOSPHOR SYSTEMS  MODEL AC-880",
+    "top_right": "FIRMWARE 2.0.4  //  8-BIT PHOSPHOR BUS",
+    "name": "PHOSPHOR",
+    "name_spacing": 6,
+    "tagline": "H U M A N   A F T E R   A L L",
+    "frame": true,
+    "bar": true,
+    "bar_label": "INITIALIZING SUBSYSTEMS",
+    "bar_width": 340,
+    "bar_blocks": 28,
+    "lines": [
+      "(C) 2026 PHOSPHOR SYSTEMS. ALL RIGHTS RESERVED.",
+      "PRESS <DEL> TO ENTER SETUP"
+    ],
+    "art": {
+      "mode": "ascii",
+      "src": "assets/helmet.png",
+      "columns": 46,
+      "cell_width": 6.0,
+      "row_height": 9.6,
+      "font_scale": 0.95,
+      "ramp": " .:-=+*#%@",
+      "threshold": 0.1,
+      "invert": false,
+      "gamma": 1.0,
+      "saturation": 0.16,
+      "dark_level": 0.35,
+      "bright_level": 0.42,
+      "colors": {
+        "dark": "dim",
+        "mid": "primary",
+        "bright": "accent"
+      },
+      "density": {
+        "dark": 0.6,
+        "mid": 0.92,
+        "bright": 1.0
+      }
+    }
+  },
+  "boot": {
+    "prompt": "C:\\> boot profile.sys",
+    "name": [
+      "ABSOLUTE",
+      "-CTRL"
+    ],
+    "tagline": "systems + graphics programmer",
+    "bar_width": 150,
+    "bar_blocks": 12,
+    "bar_seconds": 0.5,
+    "lines": [
+      [
+        "ABSOLUTE-CTRL BIOS v2.0",
+        "   (C) 2026  PHOSPHOR SYSTEMS"
+      ],
+      {
+        "left": "Memory test ................ ",
+        "right": "640K OK",
+        "bar": true
+      },
+      [
+        "Detecting graphics adapter . ",
+        "OpenGL / Vulkan OK"
+      ],
+      [
+        "Probing CPU features ....... ",
+        "SIMD, caches, pointers OK"
+      ],
+      {
+        "left": "Mounting z/OS datasets ..... ",
+        "right": "READY",
+        "bar": true
+      },
+      [
+        "Loading C runtime .......... ",
+        "GCC UCRT64 OK"
+      ]
+    ]
+  },
+  "whoami": {
+    "title": "load_God_programmer_profile",
+    "prompt": "C:\\> ",
+    "command": "absolute",
+    "lines": [
+      "Systems mage. Graphics peasant :(.",
+      "I write C... sometimes with seg faults... and COBOL close on mainframes.",
+      "I truly like to mess with pointers at every opportunity, create some \"programmer art\",",
+      "and get to know the computer a little better, ragebait the OS is also on my wishlist."
+    ]
+  },
+  "specs": {
+    "title": "SYSTEM SPECS",
+    "columns": [
+      "LANGUAGE",
+      "GRAPHICS / PLATFORM",
+      "TOOLCHAIN"
+    ],
+    "column_x": [
+      28,
+      210,
+      520
+    ],
+    "placeholder": "[ free slot ]",
+    "rows": [
+      [
+        "C",
+        "OpenGL, Vulkan, GLFW",
+        "GCC (UCRT64)"
+      ],
+      [
+        "COBOL",
+        "z/OS",
+        "z/OS UNIX compiler"
+      ],
+      [
+        "",
+        "",
+        ""
+      ]
+    ]
+  },
+  "mission": {
+    "title": "CURRENT MISSION",
+    "meter_slots": 10,
+    "meter_x": 190,
+    "text_x": 410,
+    "items": [
+      {
+        "label": "RENDERING",
+        "text": "Leveling up OpenGL, then Vulkan",
+        "level": 7
+      },
+      {
+        "label": "OS INTERNALS",
+        "text": "Windows, Linux, Raspberry Pi, z/OS",
+        "level": 4
+      },
+      {
+        "label": "HARDWARE",
+        "text": "Memory Management, POSIX and GPU Instructions",
+        "level": 6
+      }
+    ],
+    "note": "// More about much I actively study than how much I already learned..."
+  },
+  "statuses": {
+    "IN DEV": {
+      "color": "accent",
+      "in_use": true,
+      "blink": false
+    },
+    "ONLINE": {
+      "color": "primary",
+      "in_use": true,
+      "blink": true
+    },
+    "PAUSED": {
+      "color": "dim",
+      "in_use": true,
+      "blink": false
+    },
+    "SHIPPED": {
+      "color": "primary",
+      "in_use": true,
+      "blink": false
+    },
+    "PLANNING": {
+      "color": "dim",
+      "in_use": false,
+      "blink": false
+    }
+  },
+  "programs": {
+    "title": "LOADED PROGRAMS",
+    "count_format": "{total} slots, {used} in use",
+    "loading": "LOADING",
+    "slots": [
+      {
+        "id": "A",
+        "title": "3D Terrain Generation (Noise)",
+        "stack": "C / OpenGL / GLFW",
+        "status": "IN DEV",
+        "art": "terrain"
+      },
+      {
+        "id": "B",
+        "title": "z/OS COBOL Fast Data Processing",
+        "stack": "COBOL / z/OS emulation",
+        "status": "IN DEV",
+        "art": "terminal"
+      },
+      {
+        "id": "C",
+        "title": "Portable Minecraft Clone, Pure C",
+        "stack": "C / OpenGL / GLFW",
+        "status": "IN DEV",
+        "art": "voxels"
+      },
+      {
+        "id": "D",
+        "title": "Generic Game Engine",
+        "stack": "C / OpenGL / Vulkan / GLFW",
+        "status": "IN DEV",
+        "art": "engine"
+      },
+      {
+        "id": "E",
+        "title": "Slot empty",
+        "stack": "awaiting input...",
+        "status": "PLANNING",
+        "art": "idle",
+        "loading": "READING SLOT",
+        "image": {
+          "enabled": true,
+          "src": "assets/homage.jpg",
+          "treatment": "theme",
+          "crop": [
+            0,
+            0,
+            0.54,
+            1
+          ],
+          "fit": "contain",
+          "zoom": 1.25,
+          "align": [
+            0.12,
+            0.35
+          ],
+          "opacity": 0.8,
+          "fade_edges": 0.0,
+          "contrast": 1.3,
+          "brightness": 0.0,
+          "levels": 5,
+          "shadow": "screen",
+          "midtone": "dim",
+          "highlight": "primary",
+          "pixelated": false,
+          "noise": 0.4,
+          "label_position": "right",
+          "cutout": {
+            "enabled": true,
+            "low": 0.2,
+            "high": 0.52,
+            "gamma": 1.0,
+            "floor": 0.0,
+            "ceiling": 1.0
+          }
+        }
+      },
+      {
+        "id": "F",
+        "title": "Slot empty",
+        "stack": "awaiting input...",
+        "status": "PLANNING",
+        "art": "idle",
+        "loading": "READING SLOT",
+        "image": {
+          "enabled": true,
+          "src": "assets/homage.jpg",
+          "treatment": "theme",
+          "crop": [
+            0.6,
+            0,
+            0.4,
+            1
+          ],
+          "fit": "contain",
+          "zoom": 1.25,
+          "align": [
+            0.193,
+            0.4
+          ],
+          "opacity": 0.8,
+          "fade_edges": 0.0,
+          "contrast": 1.3,
+          "brightness": 0.0,
+          "levels": 5,
+          "shadow": "screen",
+          "midtone": "dim",
+          "highlight": "primary",
+          "pixelated": false,
+          "noise": 0.4,
+          "label_position": "right",
+          "cutout": {
+            "enabled": true,
+            "low": 0.2,
+            "high": 0.52,
+            "gamma": 1.0,
+            "floor": 0.0,
+            "ceiling": 1.0
+          }
+        }
+      }
+    ]
+  },
+  "art": {
+    "terrain": {
+      "loop_seconds": 16,
+      "rows": 22
+    },
+    "terminal": {
+      "header": "SDSF OUTPUT  JOB00042  CUSTPROC",
+      "columns": "SEQ   KEY        AMOUNT     RC",
+      "step_seconds": 0.45
+    },
+    "voxels": {
+      "loop_seconds": 5
+    },
+    "engine": {
+      "loop_seconds": 12,
+      "nodes": [
+        "input",
+        "scene",
+        "renderer",
+        "OpenGL",
+        "Vulkan"
+      ],
+      "command": "$ engine build --target vulkan",
+      "shaders": [
+        "basic.vert",
+        "basic.frag",
+        "post.frag"
+      ],
+      "triangle_colors": [
+        "#FF3B4E",
+        "#3BFF6A",
+        "#3B7BFF"
+      ]
+    },
+    "idle": {
+      "label": "NO SIGNAL",
+      "noise_fields": 3,
+      "noise_seconds": 0.55,
+      "band_seconds": 7
+    }
+  },
+  "telemetry": {
+    "title": "TELEMETRY",
+    "stats_cache_seconds": 0,
+    "fields": [
+      "accesses",
+      "previous_access",
+      "repos",
+      "stars",
+      "commits",
+      "prs",
+      "followers"
+    ],
+    "labels": {
+      "accesses": "Profile accesses",
+      "previous_access": "Previous visitor",
+      "repos": "Public repositories",
+      "stars": "Stars collected",
+      "commits": "Commits this year",
+      "prs": "Pull requests",
+      "followers": "Followers"
+    },
+    "leader_width": 24,
+    "live_label": "LINK LIVE",
+    "snapshot_label": "SNAPSHOT",
+    "time_format": "%Y-%m-%d %H:%M UTC",
+    "no_link_text": "no link",
+    "no_languages_text": "// awaiting GitHub token",
+    "languages_title": "MAGE'S SOUP",
+    "languages_shown": 6,
+    "languages_x": 470,
+    "language_bar_x": 590,
+    "language_blocks": 20
+  },
+  "footer": {
+    "lines": [
+      "READY.",
+      "PRESS ANY KEY TO CONTINUE"
+    ],
+    "cursor": true
+  },
+  "login": {
+    "enabled": true,
+    "top_left": "PHOSPHOR SYSTEMS  MODEL AC-880",
+    "top_right": "SESSION 0001  //  TTY0",
+    "name": "PHOSPHOR",
+    "name_spacing": 5,
+    "tagline": "E N D   O F   T R A N S M I S S I O N",
+    "title": "AUTHENTICATION REQUIRED",
+    "box_width": 440,
+    "fields": [
+      {
+        "label": "login: ",
+        "value": "absolute-ctrl",
+        "cursor": false
+      },
+      {
+        "label": "password: ",
+        "value": "",
+        "cursor": true
+      }
+    ],
+    "footer_lines": [
+      "FURTHER SECTORS ARE RESTRICTED. SESSION LOCKED."
+    ],
+    "bar": false,
+    "art": {
+      "mode": "ascii",
+      "src": "assets/helmet.png",
+      "columns": 40,
+      "cell_width": 5.4,
+      "row_height": 8.6,
+      "font_scale": 0.95
+    }
+  }
+}
