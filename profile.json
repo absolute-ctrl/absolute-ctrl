@@ -2,7 +2,7 @@
   "user": "absolute-ctrl",
   "title": "absolute-ctrl: systems and graphics programmer. C with OpenGL, Vulkan and GLFW; COBOL on z/OS.",
 
-  "theme": "phosphor",
+  "theme": "paper",
   "palette_overrides": {},
   "palettes": {
     "phosphor": { "background": "#0A0F0A", "panel": "#070B07", "screen": "#050805", "primary": "#33FF66", "accent": "#FFB000", "dim": "#1F7A3A", "shade": "#0F3D1C", "glow": "#143A1C" },
@@ -83,7 +83,7 @@
         } },
       { "id": "F", "title": "Slot empty",                       "stack": "awaiting input...",          "status": "PLANNING", "art": "idle",
         "image": {
-          "enabled": true, "src": "assets/homage.jpg", "treatment": "ice",
+          "enabled": true, "src": "assets/homage.jpg", "treatment": "theme",
           "crop": [0.53, 0, 0.47, 1], "fit": "contain", "zoom": 1.25, "align": [0.12, 0.4],
           "opacity": 0.8, "fade_edges": 0.18, "contrast": 1.3, "brightness": 0.0, "levels": 5,
           "shadow": "screen", "midtone": "dim", "highlight": "primary", "pixelated": false,
