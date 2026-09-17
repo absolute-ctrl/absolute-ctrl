@@ -1,0 +1,9 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "functions": {
+    "api/profile.py": { "maxDuration": 10 }
+  },
+  "rewrites": [
+    { "source": "/live.svg", "destination": "/api/profile" }
+  ]
+}
