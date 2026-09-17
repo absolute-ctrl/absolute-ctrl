@@ -73,8 +73,22 @@
       { "id": "B", "title": "z/OS COBOL Fast Data Processing",  "stack": "COBOL / z/OS emulation",     "status": "IN DEV",   "art": "terminal" },
       { "id": "C", "title": "Portable Minecraft Clone, Pure C", "stack": "C / OpenGL / GLFW",          "status": "IN DEV",   "art": "voxels"   },
       { "id": "D", "title": "Generic Game Engine",              "stack": "C / OpenGL / Vulkan / GLFW", "status": "IN DEV",   "art": "engine"   },
-      { "id": "E", "title": "Slot empty",                       "stack": "awaiting input...",          "status": "PLANNING", "art": "idle"     },
-      { "id": "F", "title": "Slot empty",                       "stack": "awaiting input...",          "status": "PLANNING", "art": "idle"     }
+      { "id": "E", "title": "Slot empty",                       "stack": "awaiting input...",          "status": "PLANNING", "art": "idle",
+        "image": {
+          "enabled": true, "src": "assets/homage.jpg", "treatment": "theme",
+          "crop": [0, 0, 0.54, 1], "fit": "contain", "zoom": 1.25, "align": [0.12, 0.35],
+          "opacity": 0.8, "fade_edges": 0.18, "contrast": 1.3, "brightness": 0.0, "levels": 5,
+          "shadow": "screen", "midtone": "dim", "highlight": "primary", "pixelated": false,
+          "noise": 0.4, "label_position": "right"
+        } },
+      { "id": "F", "title": "Slot empty",                       "stack": "awaiting input...",          "status": "PLANNING", "art": "idle",
+        "image": {
+          "enabled": true, "src": "assets/homage.jpg", "treatment": "theme",
+          "crop": [0.53, 0, 0.47, 1], "fit": "contain", "zoom": 1.25, "align": [0.12, 0.4],
+          "opacity": 0.8, "fade_edges": 0.18, "contrast": 1.3, "brightness": 0.0, "levels": 5,
+          "shadow": "screen", "midtone": "dim", "highlight": "primary", "pixelated": false,
+          "noise": 0.4, "label_position": "right"
+        } }
     ]
   },
 

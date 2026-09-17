@@ -76,6 +76,31 @@ Slot count is free (cards flow two per row). The header's "N slots, M in use" is
 
 Add your own statuses freely, e.g. `"ARCHIVED": { "color": "dim", "in_use": false, "blink": false }`.
 
+### Slot images (`programs.slots[].image`)
+Any slot can have an image on its screen, drawn **under** that slot's animation and text. It's meant for the `idle` slots: the static, rolling band and label sit on top of it. Delete the `image` block, or set `"enabled": false`, and the slot goes back to the plain animated static.
+
+Put the file in `assets/` and point `src` at it (PNG, JPEG, GIF or WebP). It's embedded in the SVG, because GitHub blocks images an SVG tries to load from elsewhere. Keep it small, ideally under about 150 KB. A slot image the same size as a small thumbnail is plenty for this screen. If two slots use the same file, it's embedded only once.
+
+- `treatment`
+  - `"theme"`: converted to grayscale, contrast-boosted, posterized and tinted with palette colors. Changing `theme` re-tints it automatically.
+  - `"none"`: placed as is, for images you've already edited. `opacity`, `fade_edges` and the crop/fit settings still apply.
+- `crop`: `[x, y, width, height]` as fractions of the image. `[0, 0, 0.5, 1]` is the left half.
+- `fit`: `"contain"` shows the whole crop; `"cover"` fills the screen and trims the overflow.
+- `zoom`: extra scale after fitting. `1.25` is 25% larger.
+- `align`: `[x, y]` from `0` (left/top) to `1` (right/bottom), where the image sits on the screen.
+- `opacity`: how dim it is overall.
+- `fade_edges`: how softly the edges blend into the screen (`0` for hard edges, up to `0.45`).
+- Tone settings, used only with `"theme"`:
+  - `contrast`, `brightness`: before tinting. `brightness` goes from about `-0.5` to `0.5`.
+  - `levels`: number of posterize steps. `0` gives a smooth tint.
+  - `shadow`, `midtone`, `highlight`: the three colors the dark, mid and light tones map to. Palette keys or hex values.
+- `pixelated`: `true` for chunky pixels when a small image is scaled up.
+- `noise`: how much static is drawn over it (`0` to `1`).
+- `label_position`: `"center"`, `"left"`, `"right"`, `"top"`, `"bottom"`, `"bottom-right"` or `"none"`.
+- `label`: optional text replacing `art.idle.label` for this slot. `""` hides the box.
+
+The defaults split `assets/homage.jpg` across E (left half) and F (right half). To show the full photo in one slot, use `"crop": [0, 0, 1, 1]`.
+
 ### Animation settings (`art`)
 - `terrain.loop_seconds`, `terrain.rows`: speed and density of the flyover (more rows = bigger file)
 - `terminal.header`, `terminal.columns`, `terminal.step_seconds`: scroll speed per record

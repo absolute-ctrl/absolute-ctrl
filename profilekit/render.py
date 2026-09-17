@@ -6,6 +6,7 @@ import random
 import time
 
 from .art import ARTS, Ctx
+from . import image as slot_image
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 W, CW, CH = 880, 400, 290
@@ -115,7 +116,8 @@ class Profile:
         b = self.header(c.get("title", "WHOAMI"))
         b += f'<text x="28" y="80" fill="{P["dim"]}" font-size="15">C:\\&gt; <tspan fill="{P["primary"]}">{esc(c.get("command", "whoami"))}</tspan></text>'
         for i, line in enumerate(c["lines"]):
-            b += f'<text x="28" y="{112 + i * 26}" fill="{P["accent"] if i == 0 else P["primary"]}" font-size="16">{esc(line)}</text>'
+            size = min(16.0, (W - 56) / (max(1, len(line)) * 0.6))
+            b += f'<text x="28" y="{112 + i * 26}" fill="{P["accent"] if i == 0 else P["primary"]}" font-size="{size:.1f}" xml:space="preserve">{esc(line)}</text>'
         return 140 + len(c["lines"]) * 26 - 24, b
 
     def sec_specs(self):
@@ -169,7 +171,18 @@ class Profile:
                  if st.get("blink") else "")
         art_name = slot.get("art", "idle")
         art_fn = ARTS.get(art_name, ARTS["idle"])
-        art = art_fn(Ctx(sid, P, self.cfg.get("art", {}).get(art_name, {}), esc))
+        opts = dict(self.cfg.get("art", {}).get(art_name, {}))
+        img_cfg = slot.get("image") or {}
+        try:
+            img = slot_image.layer(sid, img_cfg, P, ROOT)
+        except (OSError, ValueError) as err:
+            img = f'<text x="34" y="62" fill="{P["accent"]}" font-size="10">image error: {esc(err)}</text>'
+        if img:
+            opts["label_position"] = img_cfg.get("label_position", "bottom")
+            opts["noise"] = img_cfg.get("noise", 0.5)
+            if "label" in img_cfg:
+                opts["label"] = img_cfg["label"]
+        art = img + art_fn(Ctx(sid, P, opts, esc))
         text_col = P["dim"] if empty else P["primary"]
         sub_col = P["dim"] if empty else P["accent"]
         return f'''<path d="M10 0 H{CW - 60} L{CW - 10} 40 V{CH - 10} Q{CW - 10} {CH} {CW - 20} {CH} H20 Q10 {CH} 10 {CH - 10} Z" fill="{P["panel"]}" stroke="{col}" stroke-width="3"/>
@@ -289,6 +302,7 @@ class Profile:
             y += h
 
         H = y + 10
+        clips += slot_image.shared_defs(ROOT)
         return f'''<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="{W}" height="{H}" viewBox="0 0 {W} {H}" font-family="{esc(cfg.get("font", "monospace"))}">
 <defs>
 <pattern id="scan" width="4" height="4" patternUnits="userSpaceOnUse"><rect width="4" height="2" fill="#000" opacity=".28"/></pattern>
@@ -311,4 +325,5 @@ class Profile:
 
 def render(cfg, telemetry):
     random.seed(7)
+    slot_image.reset()
     return Profile(cfg, telemetry).build()

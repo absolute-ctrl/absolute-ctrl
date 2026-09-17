@@ -292,18 +292,28 @@ def engine(x):
 
 # --------------------------------------------------------------------------- idle
 def idle(x):
-    """Empty slot: faint static, one slow rolling band, blinking cursor. Quiet on purpose."""
+    """Empty slot: faint static, one slow rolling band, blinking cursor. Quiet on purpose.
+    When the slot has an image, these layers draw on top of it (label moved per `label_position`)."""
     P, sid, esc = x.pal, x.sid, x.esc
     rnd = random.Random("idle-" + sid)
+    density = float(x.opts.get("noise", 1.0))
     noise = "".join(f'<rect x="{rnd.randint(24, 372)}" y="{rnd.randint(46, 188)}" width="3" height="2" '
-                    f'fill="{P["primary"]}" opacity="{rnd.choice([.08, .14, .22])}"/>' for _ in range(240))
-    label = esc(x.opts.get("label", "NO SIGNAL"))
+                    f'fill="{P["primary"]}" opacity="{rnd.choice([.08, .14, .22])}"/>' for _ in range(int(240 * density)))
     band = (f'<rect x="{SX0}" y="{SY0}" width="{SX1 - SX0}" height="22" fill="{P["primary"]}" opacity=".04">'
             f'<animate attributeName="y" values="{SY0 - 22};{SY1}" dur="7s" repeatCount="indefinite"/></rect>')
+    label = str(x.opts.get("label", "NO SIGNAL"))
+    pos = x.opts.get("label_position", "center")
+    if not label or pos == "none":
+        return noise + band
+    bw = max(140, len(label) * 8 + 44)
+    bx, by = {"center": (200 - bw / 2, 102), "bottom": (200 - bw / 2, 156),
+              "top": (200 - bw / 2, 50), "bottom-right": (370 - bw, 156),
+              "right": (370 - bw, 102), "left": (30, 102)}.get(pos, (200 - bw / 2, 102))
+    tx = bx + (bw - 16) / 2
     return (noise + band +
-            f'<rect x="130" y="102" width="140" height="30" fill="{P["screen"]}" stroke="{P["dim"]}"/>'
-            f'<text x="192" y="122" text-anchor="middle" fill="{P["dim"]}" font-size="13">{label}</text>'
-            f'<rect x="244" y="112" width="7" height="12" fill="{P["dim"]}">'
+            f'<rect x="{bx:.0f}" y="{by}" width="{bw:.0f}" height="30" fill="{P["screen"]}" stroke="{P["dim"]}"/>'
+            f'<text x="{tx:.0f}" y="{by + 20}" text-anchor="middle" fill="{P["dim"]}" font-size="13">{esc(label)}</text>'
+            f'<rect x="{tx + len(label) * 3.9 + 6:.0f}" y="{by + 10}" width="7" height="12" fill="{P["dim"]}">'
             f'<animate attributeName="opacity" values="1;1;0;0" keyTimes="0;.5;.5;1" dur="1.6s" repeatCount="indefinite"/></rect>')
 
 
