@@ -9,9 +9,7 @@
     "amber":     { "background": "#0F0B05", "panel": "#0B0804", "screen": "#070502", "primary": "#FFB000", "accent": "#FFE08A", "dim": "#8A5A00", "shade": "#3D2A05", "glow": "#3A2A0A" },
     "ice":       { "background": "#050A10", "panel": "#04080D", "screen": "#02050A", "primary": "#5CE1FF", "accent": "#FF5CA8", "dim": "#1D5A70", "shade": "#0B2A38", "glow": "#0E2A3A" },
     "paper":     { "background": "#101010", "panel": "#0B0B0B", "screen": "#060606", "primary": "#E8E8E8", "accent": "#FF4A3D", "dim": "#6B6B6B", "shade": "#2A2A2A", "glow": "#262626" },
-    "true-ice":  { "background": "#0A0F0A", "panel": "#070B07", "screen": "#050508", "primary": "#1010e0", "accent": "#1c6e1c", "dim": "#1f215c", "shade": "#0f173d", "glow": "#0f248c" },
-    "n/a1": { "background": "#0A0F0A", "panel": "#0c0cd9", "screen": "", "primary": "", "accent": "", "dim": "", "shade": "", "glow": "" },
-    "n/a2":   { "background": "#0A0F0A", "panel": "#0c0cd9", "screen": "", "primary": "", "accent": "", "dim": "", "shade": "", "glow": "" }
+    "true-ice":  { "background": "#0A0F0A", "panel": "#070B07", "screen": "#050508", "primary": "#1010e0", "accent": "#1c6e1c", "dim": "#1f215c", "shade": "#0f173d", "glow": "#0f248c" }
   },
   "font": "'IBM Plex Mono','Cascadia Mono',Consolas,'Courier New',monospace",
 
@@ -54,11 +52,11 @@
   "mission": {
     "title": "CURRENT MISSION",
     "items": [
-      { "label": "RENDERING",    "text": "Leveling up OpenGL, then Vulkan",        "level": 6 },
-      { "label": "OS INTERNALS", "text": "Windows, Linux, Raspberry Pi, z/OS",     "level": 4 },
-      { "label": "HARDWARE",     "text": "Low-level features, memory done right", "level": 3 }
+      { "label": "RENDERING",    "text": "Leveling up OpenGL, then Vulkan",                "level": 7 },
+      { "label": "OS INTERNALS", "text": "Windows, Linux, Raspberry Pi, z/OS",             "level": 4 },
+      { "label": "HARDWARE",     "text": "Memory Management, POSIX and GPU Instructions",  "level": 6 }
     ],
-    "note": "// More about interest than how much I grasp the content..."
+    "note": "// More about much I actively study than how much I already learned..."
   },
 
   "statuses": {
