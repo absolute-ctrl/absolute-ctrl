@@ -247,9 +247,9 @@
         "GCC (UCRT64)"
       ],
       [
-        "Rust",
-        "OpenGL, Vulkan, GLFW",
-        "rustc"
+        "C23",
+        "Standard libraries (only)",
+        "c3c"
       ],
       [
         "Go",
