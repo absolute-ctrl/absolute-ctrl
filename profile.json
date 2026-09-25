@@ -244,16 +244,16 @@
       [
         "C",
         "OpenGL, Vulkan, GLFW",
-        "GCC (UCRT64)"
+        "Clang (Clangd)"
       ],
       [
-        "C23",
-        "Standard libraries (only)",
-        "c3c"
+        "C++",
+        "OpenGL, Vulkan, GLFW",
+        "Clang (Clangd)"
       ],
       [
         "Go",
-        "",
+        "Standard Library",
         "Gollvm"
       ]
     ]
