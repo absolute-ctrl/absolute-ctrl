@@ -212,7 +212,7 @@
       },
       [
         "Loading C runtime .......... ",
-        "GCC UCRT64 OK"
+        "CLANG CLANG64 OK"
       ]
     ]
   },
@@ -252,9 +252,9 @@
         "Clang (Clangd)"
       ],
       [
-        "Go",
-        "Standard Library",
-        "Gollvm"
+        "Rust",
+        "Standard Packages",
+        "rustc"
       ]
     ]
   },
@@ -267,17 +267,17 @@
       {
         "label": "RENDERING",
         "text": "Leveling up OpenGL, then Vulkan",
-        "level": 7
+        "level": 9
       },
       {
         "label": "OS INTERNALS",
-        "text": "Windows, Linux, Raspberry Pi, z/OS",
-        "level": 4
+        "text": "Windows, Linux, maybe MacOS someday...",
+        "level": 8
       },
       {
         "label": "HARDWARE",
         "text": "Memory Management, POSIX and GPU Instructions",
-        "level": 6
+        "level": 5
       }
     ],
     "note": "// More about much I actively study than how much I already learned..."
@@ -337,9 +337,9 @@
       },
       {
         "id": "D",
-        "title": "Generic Game Engine",
-        "stack": "C / OpenGL / Vulkan / GLFW",
-        "status": "IN DEV",
+        "title": "2D Meteor Dodge Game",
+        "stack": "C / OpenGL / GLFW",
+        "status": "DEPLOYED",
         "art": "engine"
       },
       {
