@@ -303,6 +303,11 @@
       "in_use": true,
       "blink": false
     },
+    "DEPLOYED": {
+      "color": "primary",
+      "in_use": true,
+      "blink": true
+    },
     "PLANNING": {
       "color": "dim",
       "in_use": false,
@@ -340,7 +345,7 @@
         "title": "2D Meteor Dodge Game",
         "stack": "C / OpenGL / GLFW",
         "status": "DEPLOYED",
-        "art": "engine"
+        "art": "meteor"
       },
       {
         "id": "E",
@@ -516,6 +521,13 @@
         "#3BFF6A",
         "#3B7BFF"
       ]
+    },
+    "meteor": {
+      "loop_seconds": 10,
+      "hiscore": "099999",
+      "score_start": 4210,
+      "lives": 3,
+      "footer": "WAVE 07  //  60 FPS"
     },
     "idle": {
       "label": "NO SIGNAL",

@@ -345,6 +345,155 @@ def engine(x):
     return f'{p1}{p2}{p3}{flash}'
 
 
+# --------------------------------------------------------------------------- meteor
+def meteor(x):
+    """2D Meteor Dodge, played back as a seamless loop: a ship weaving between falling rocks.
+
+    The run is simulated once in Python. The ship follows a periodic path of lane changes, and
+    every dodge is staged: a rock is aimed at the lane the ship is leaving and arrives just after
+    it has gone, so the near misses are real. Each rock falls once per loop, offset by `begin`,
+    so the field wraps with no seam. Filler rocks are only placed where they miss the ship.
+    """
+    P, sid, esc, o = x.pal, x.sid, x.esc, x.opts
+    T = float(o.get("loop_seconds", 10))
+    rnd = random.Random("meteor-" + sid)
+    top, ship_y, bottom = 62, 170, 206          # playfield, ship row, below-screen park
+    hud_h = 18
+
+    # ---- ship path: periodic lane changes, x(0) == x(T)
+    # Short sidesteps, not lane jumps: each rock is aimed where the ship was and misses by a hair.
+    shifts = o.get("shifts") or [-52, -44, 48, 56, 40, -46, 50, -40, -56, 44]
+    pos = [200.0]
+    for d in shifts[:-1]:
+        pos.append(pos[-1] + d)
+    moves, t = [], 0.55
+    step = (T - 0.6) / len(pos)
+    for i in range(len(pos)):
+        moves.append((t + i * step, pos[(i + 1) % len(pos)], pos[i]))
+    move_d = 0.34
+    keys = [(0.0, pos[0])]
+    for tm, xb, xa in moves:
+        keys += [(tm, xa), (tm + move_d, xb)]
+    keys.append((T, pos[0]))
+
+    def ship_x(tt):
+        tt %= T
+        for (t0, x0), (t1, x1) in zip(keys, keys[1:]):
+            if t0 <= tt <= t1:
+                return x0 if t1 == t0 else x0 + (x1 - x0) * (tt - t0) / (t1 - t0)
+        return keys[0][1]
+
+    # ---- rocks: (x, radius, fall seconds, start time)
+    rocks = []
+    def fall_for(r):
+        return 1.5 + (11 - r) * 0.09 + rnd.uniform(0, .3)
+
+    for tm, xb, xa in moves:                    # the staged dodges
+        r = rnd.randint(8, 11)
+        F = fall_for(r)
+        hit = tm + move_d + 0.12
+        t0 = hit - F * (ship_y - (top - 14)) / (bottom - (top - 14))
+        rocks.append((xa - (xb - xa) * .12, r, F, t0 % T, True))
+    tries = 0
+    while len(rocks) < 22 and tries < 400:      # filler: only where it misses
+        tries += 1
+        r = rnd.randint(4, 9)
+        F = fall_for(r)
+        t0 = rnd.uniform(0, T)
+        hit = t0 + F * (ship_y - (top - 14)) / (bottom - (top - 14))
+        rx = rnd.uniform(36, 364)
+        if all(abs(rx - ship_x(hit + d)) > r + 26 for d in (-.25, 0, .25)):
+            rocks.append((rx, r, F, t0, False))
+
+    def rock_shape(r, seed):
+        g = random.Random(seed)
+        n = 9
+        pts = []
+        for k in range(n):
+            a = 2 * math.pi * k / n + g.uniform(-.2, .2)
+            rr = r * g.uniform(.72, 1.0)
+            pts.append(f"{rr * math.cos(a):.1f},{rr * math.sin(a):.1f}")
+        cr = r * .28
+        return (f'<polygon points="{" ".join(pts)}" fill="{P["shade"]}" stroke="{P["primary"]}" stroke-width="1.2"/>'
+                f'<circle cx="{r * .25:.1f}" cy="{-r * .2:.1f}" r="{cr:.1f}" fill="{P["screen"]}" stroke="{P["dim"]}" stroke-width=".8"/>'
+                f'<circle cx="{-r * .35:.1f}" cy="{r * .3:.1f}" r="{cr * .6:.1f}" fill="{P["screen"]}"/>')
+
+    field = ""
+    pops = ""
+    for i, (rx, r, F, t0, staged) in enumerate(rocks):
+        y0 = top - 14 - r
+        spin = rnd.choice([-1, 1]) * rnd.uniform(2.5, 5)
+        trail = "".join(f'<rect x="{dx - 1}" y="{-r - 6 - k * 7}" width="2" height="{4 - k}" fill="{P["dim"]}" opacity="{.7 - k * .2:.1f}"/>'
+                        for k, dx in enumerate((0, -3, 3)))
+        field += (f'<g><g>{trail}<g>{rock_shape(r, f"{sid}{i}")}'
+                  f'<animateTransform attributeName="transform" type="rotate" values="0;{360 if spin > 0 else -360}" '
+                  f'dur="{abs(spin):.2f}s" repeatCount="indefinite"/></g></g>'
+                  f'<animateTransform attributeName="transform" type="translate" dur="{f(T)}s" begin="{t0 - T:.3f}s" '
+                  f'repeatCount="indefinite" keyTimes="0;{F / T:.4f};1" '
+                  f'values="{rx:.1f} {y0};{rx:.1f} {bottom + r};{rx:.1f} {bottom + r}"/></g>')
+        if staged:                              # "+50 CLOSE!" pops next to the ship
+            hit = (t0 + F * (ship_y - y0) / (bottom + r - y0)) % T
+            px = max(60, min(330, ship_x(hit) + (24 if ship_x(hit) < 200 else -24)))
+            anchor = "start" if ship_x(hit) < 200 else "end"
+            pops += (f'<text x="{px:.0f}" y="{ship_y - 14}" text-anchor="{anchor}" fill="{P["accent"]}" font-size="10" '
+                     f'font-weight="700" opacity="0">+50 CLOSE{windows([(hit, min(T, hit + .7))], T)}</text>')
+
+    # ---- starfield, two parallax layers, each wraps by repeating itself one screen up
+    stars = ""
+    H = SY1 - SY0
+    for layer, (n, sz, col, dur) in enumerate([(26, 1, "dim", 9.0), (12, 2, "primary", 4.5)]):
+        dots = "".join(f'<rect x="{rnd.randint(24, 374)}" y="{rnd.randint(SY0, SY1)}" width="{sz}" height="{sz}" '
+                       f'fill="{P[col]}" opacity="{.35 if layer else .6}"/>' for _ in range(n))
+        stars += (f'<g>{dots}<g transform="translate(0,{-H})">{dots}</g>'
+                  f'<animateTransform attributeName="transform" type="translate" values="0 0;0 {H}" dur="{f(dur)}s" '
+                  f'repeatCount="indefinite"/></g>')
+
+    # ---- ship: pixel sprite, flickering thruster, banks into each move
+    A, Pr, D_ = P["accent"], P["primary"], P["dim"]
+    px = [(-1, -9, 2, 4, Pr), (-3, -5, 6, 4, A), (-5, -1, 10, 4, A), (-9, 1, 4, 6, A), (5, 1, 4, 6, A),
+          (-2, -3, 4, 3, P["screen"]), (-5, 3, 10, 2, D_), (-9, 7, 3, 2, D_), (6, 7, 3, 2, D_)]
+    sprite = "".join(f'<rect x="{a}" y="{b}" width="{w}" height="{h}" fill="{c}"/>' for a, b, w, h, c in px)
+    flame = (f'<rect x="-2" y="5" width="4" height="5" fill="{A}">'
+             f'<animate attributeName="height" values="5;9;4;8;5" dur=".3s" repeatCount="indefinite"/></rect>'
+             f'<rect x="-1" y="5" width="2" height="3" fill="{Pr}"/>')
+    kt = ";".join(f"{k / T:.5f}" for k, _ in keys)
+    vals = ";".join(f"{v:.1f} {ship_y}" for _, v in keys)
+    # bank: tilt toward the direction of travel during each move
+    bank_keys, bank_vals = [0.0], ["0"]
+    for tm, xb, xa in moves:
+        ang = 14 if xb > xa else -14
+        for tt, v in ((tm, 0), (tm + .08, ang), (tm + move_d - .04, ang), (tm + move_d + .06, 0)):
+            if tt < T and tt > bank_keys[-1]:
+                bank_keys.append(tt)
+                bank_vals.append(str(v))
+    bank_keys.append(T)
+    bank_vals.append("0")
+    ship = (f'<g><g>{flame}{sprite}'
+            f'<animateTransform attributeName="transform" type="rotate" dur="{f(T)}s" repeatCount="indefinite" '
+            f'keyTimes="{";".join(f"{k / T:.5f}" for k in bank_keys)}" values="{";".join(bank_vals)}"/></g>'
+            f'<animateTransform attributeName="transform" type="translate" dur="{f(T)}s" repeatCount="indefinite" '
+            f'keyTimes="{kt}" values="{vals}"/></g>')
+
+    # ---- HUD: score ticks up through the loop, lives, wave
+    hud = (f'<rect x="{SX0}" y="{SY0}" width="{SX1 - SX0}" height="{hud_h}" fill="{P["shade"]}"/>'
+           f'<line x1="{SX0}" y1="{SY0 + hud_h}" x2="{SX1}" y2="{SY0 + hud_h}" stroke="{P["dim"]}"/>'
+           f'<text x="32" y="{SY0 + 13}" fill="{P["dim"]}" font-size="10">SCORE</text>'
+           f'<text x="200" y="{SY0 + 13}" text-anchor="middle" fill="{P["dim"]}" font-size="10" xml:space="preserve">'
+           f'HI <tspan fill="{P["accent"]}">{esc(str(o.get("hiscore", "099999")))}</tspan></text>')
+    steps, score = 20, int(o.get("score_start", 4210))
+    for k in range(steps):
+        score += 30 + rnd.randint(0, 3) * 10
+        hud += (f'<text x="68" y="{SY0 + 13}" fill="{P["primary"]}" font-size="10" opacity="0">{score:06d}'
+                f'{windows([(k * T / steps, (k + 1) * T / steps)], T)}</text>')
+    for k in range(int(o.get("lives", 3))):
+        lx = 362 - k * 14
+        hud += (f'<g transform="translate({lx},{SY0 + 9}) scale(.6)">'
+                f'<rect x="-1" y="-6" width="2" height="3" fill="{A}"/><rect x="-4" y="-3" width="8" height="4" fill="{A}"/>'
+                f'<rect x="-7" y="1" width="14" height="4" fill="{A}"/></g>')
+    footer = f'<text x="368" y="186" text-anchor="end" fill="{P["dim"]}" font-size="9">{esc(o.get("footer", "WAVE 07  //  60 FPS"))}</text>'
+    return f'{stars}{field}{ship}{pops}{hud}{footer}'
+
+
 # --------------------------------------------------------------------------- idle
 def idle(x):
     """Empty slot: drifting static, one slow rolling band, blinking cursor. Quiet on purpose.
@@ -388,4 +537,4 @@ def idle(x):
             f'<animate attributeName="opacity" values="1;1;0;0" keyTimes="0;.5;.5;1" dur="1.6s" repeatCount="indefinite"/></rect>')
 
 
-ARTS = {"terrain": terrain, "terminal": terminal, "voxels": voxels, "engine": engine, "idle": idle, "http_log": http_log}
+ARTS = {"terrain": terrain, "terminal": terminal, "voxels": voxels, "engine": engine, "idle": idle, "http_log": http_log, "meteor": meteor}
