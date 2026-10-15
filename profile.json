@@ -330,7 +330,7 @@
         "id": "B",
         "title": "Minimal HTTP Server, Pure C",
         "stack": "C / POSIX sockets / epoll",
-        "status": "IN DEV",
+        "status": "DEPLOYED",
         "art": "http_log"
       },
       {
