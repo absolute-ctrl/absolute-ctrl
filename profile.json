@@ -249,7 +249,7 @@
       [
         "C++",
         "OpenGL, Vulkan, GLFW",
-        "Clang (Clangd)"
+        "Clang (Clangd) | MSVC (MSVC)"
       ],
       [
         "Rust",
